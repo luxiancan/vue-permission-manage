@@ -27,6 +27,8 @@ export default {
                 let data = res.data;
                 if (data.code === 0) {
                     sessionStorage.token = data.data.token;
+
+                    // 跳转到首页 home。这里会触发全局路由拦截 router.beforeEach
                     vm.$router.push({ name: 'home' });
                 } else {
                     // alert message
